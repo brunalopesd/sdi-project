@@ -6,12 +6,12 @@ if __name__ == "__main__":
   list_messages = []
 
   while (contador > 0) :
-    print('------------------------')
-    print('          Menu \n')
+    print('')
+    print('---------Menu--------- \n')
     print('1 Enviar uma mensagem')
     print('2 Listar Mensagens')
     print('3 Sair')
-    print('-------------------')
+    print('')
     
     try:
       option = int(input('Selecione uma opção: '))
@@ -23,7 +23,7 @@ if __name__ == "__main__":
       
       elif option == 2:
         os.system('clear')
-        returned_message = echo('getMessages')
+        returned_message = echo('get_messages')
         print(returned_message[1])
             
 
