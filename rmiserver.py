@@ -5,7 +5,7 @@ from Pyro4.errors import CommunicationError
 from rotas import RoutesConfig
 
 
-@expose
+@expose #deixa a classe exposta pro objeto remoto acessar 
 class EchoServer(object):
 
     def __init__(self, name_server):

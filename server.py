@@ -4,7 +4,6 @@ from rmiserver import EchoServer
 from rotas import RoutesConfig
 from handler_servers import get_servers
 from Pyro4.errors import CommunicationError, NamingError
-import IPython
 
 
 import sys
@@ -29,7 +28,7 @@ try:
         try:
             returned_messages = each_server.get_messages()
             echo_server.messages_list = returned_messages[1] #ignora o nome do servidor e retorna a msg apenas
-            print('Mensagens recebida do servidor %s' % (returned_messages[0] )) 
+            print('Mensagens recebidas do servidor %s' % (returned_messages[0] )) 
             break
         except CommunicationError:
             pass

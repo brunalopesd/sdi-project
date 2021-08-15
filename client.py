@@ -24,7 +24,7 @@ if __name__ == "__main__":
       elif option == 2:
         os.system('clear')
         returned_message = echo('get_messages')
-        print(returned_message[1])
+        print(returned_message[1]) #retorna apenas a mensagem 
             
 
       elif option == 3:

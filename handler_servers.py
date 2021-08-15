@@ -4,22 +4,21 @@ from rotas import RoutesConfig
 from Pyro4.errors import CommunicationError, NamingError
 
 
-
 def get_servers():
   ns = locateNS(RoutesConfig.HOST, RoutesConfig.PORT)
   server_names = ns.list('server-')
   return server_names
 
-def echo(method, *args):
+def echo(method, *args): #args = mensagem digitada
   try:
     servers = get_servers()
     server_keys = list(servers.keys())
     
     for key in server_keys:
-      conection = Proxy(servers[key])
+      connection = Proxy(servers[key])
 
       try:
-        return getattr(conection, method)(*args) #getattr, metodo do pyro 
+        return getattr(connection, method)(*args) #acessa o metodo remoto 
       except CommunicationError:
         pass
   except NamingError:
