@@ -1,7 +1,12 @@
 
-### Executando a aplicação
+# O que é?
 
-Necessario ter python 3.x instalado.
+App desenvolvido para a disciplina de sistemas distribudos que utiliza a replicação para lidar com a tolerância a falhas em um sistema distribuído.
+
+
+## Executando a aplicação
+
+Necessario ter Python 3.5+ instalado.
 
 1 - Abra o terminal e execute 
 ```bash
@@ -13,12 +18,12 @@ pip3 install -r library.txt
 python3 -m Pyro4.naming
 ```
 
-3 - Em um novo terminal execute o servidor 
+3 - Em um novo terminal execute o servidor do app
 ```python
 python3 server.py
 ```
 
-4 - Em outro terminar execute o cliente
+4 - Em outro terminar execute o client do app
 ```python
 python3 client.py
 ```
@@ -26,8 +31,8 @@ python3 client.py
 
 ### Para validar a replicação:
 
-- envie mensagens 
+- envie uma (ou mais) mensagens 
 - liste as mensagens
 - suba um novo servidor
-- desligue o 1o control+d
+- desligue o 1o 
 - liste as mensagens novamente
