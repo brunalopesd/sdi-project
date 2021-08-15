@@ -8,12 +8,12 @@ App desenvolvido para a disciplina de sistemas distribudos que utiliza a replica
 
 Necessario ter Python 3.5+ instalado.
 
-1 - Abra o terminal e execute 
+1 - Instale as dependencias
 ```bash
 pip3 install -r library.txt
 ```
 
-2 - Execute o servidor pyro
+2 - Inicie o servidor pyro
 ```python
 python3 -m Pyro4.naming
 ```
