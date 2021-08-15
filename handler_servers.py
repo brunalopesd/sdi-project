@@ -1,27 +1,27 @@
-import Pyro4
+from Pyro4 import locateNS, Proxy
 import sys
 from rotas import RoutesConfig
+from Pyro4.errors import CommunicationError, NamingError
 
+
+
+def get_servers():
+  ns = locateNS(RoutesConfig.HOST, RoutesConfig.PORT)
+  server_names = ns.list('server-')
+  return server_names
 
 def echo(method, *args):
   try:
-    ns = Pyro4.locateNS(RoutesConfig.HOST, RoutesConfig.PORT)
-    server_names = ns.list('server-') #nao mexer
-    keys = list(server_names.keys())
-
-    for key in keys:
-      each_server = Pyro4.Proxy(server_names[key])
+    servers = get_servers()
+    server_keys = list(servers.keys())
+    
+    for key in server_keys:
+      conection = Proxy(servers[key])
 
       try:
-        return getattr(each_server, method)(*args)
-      except Pyro4.errors.CommunicationError:
+        return getattr(conection, method)(*args) #getattr, metodo do pyro 
+      except CommunicationError:
         pass
-  except Pyro4.errors.NamingError:
+  except NamingError:
       print('Não há nenhum servidor ativo')
       sys.exit(0)
-
-
-# def get_servers():
-#   ns = locateNS(RoutesConfig.HOST, RoutesConfig.PORT)
-#   server_names = ns.list('server-')
-#   return list(server_names.keys())

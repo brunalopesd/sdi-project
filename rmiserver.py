@@ -32,5 +32,5 @@ class EchoServer(object):
         self.send_msg_replicas(self.name_server, str(message))
         return self.name_server + ": " + str(message)
 
-    def getMessages(self):
+    def get_messages(self):
         return (self.name_server, self.messages_list)
