@@ -9,7 +9,7 @@ def get_servers():
   server_names = ns.list('server-')
   return server_names
 
-def echo(method, *args): #args = mensagem digitada
+def echo(method, *params): #params = mensagem digitada
   try:
     servers = get_servers()
     server_keys = list(servers.keys())
@@ -18,7 +18,7 @@ def echo(method, *args): #args = mensagem digitada
       connection = Proxy(servers[key])
 
       try:
-        return getattr(connection, method)(*args) #acessa o metodo remoto 
+        return getattr(connection, method)(*params)
       except CommunicationError:
         pass
   except NamingError:

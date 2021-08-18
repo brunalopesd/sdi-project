@@ -19,12 +19,12 @@ if __name__ == "__main__":
       if option == 1:
         os.system('clear')
         message = input('Escreva sua mensagem: ')
-        send_message = echo('echoService', message)
+        send_message = echo('echo_service', message)
       
       elif option == 2:
         os.system('clear')
         returned_message = echo('get_messages')
-        print(returned_message[1]) #retorna apenas a mensagem 
+        print(returned_message)
             
 
       elif option == 3:

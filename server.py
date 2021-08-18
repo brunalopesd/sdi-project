@@ -27,7 +27,7 @@ try:
 
         try:
             returned_messages = each_server.get_messages()
-            echo_server.messages_list = returned_messages[1] #ignora o nome do servidor e retorna a msg apenas
+            echo_server.messages_list = returned_messages
             print('Mensagens recebidas do servidor %s' % (returned_messages[0] )) 
             break
         except CommunicationError:

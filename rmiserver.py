@@ -25,12 +25,12 @@ class EchoServer(object):
                 print('Erro no envio da mensagem')
 
     def get_replicas_message(self, name_server, message):
-        print('Mensagem recebida do ' + name_server)
+        print('Mensagem recebida do servidor ' + name_server)
         self.messages_list.append(message)
 
-    def echoService(self, message):
+    def echo_service(self, message):
         self.send_msg_replicas(self.name_server, str(message))
-        return self.name_server + ": " + str(message)
+        return str(message)
 
     def get_messages(self):
-        return (self.name_server, self.messages_list)
+        return (self.messages_list)
