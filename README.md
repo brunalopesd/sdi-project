@@ -23,7 +23,7 @@ python3 -m Pyro4.naming
 python3 server.py
 ```
 
-4 - Em outro terminar execute o client do app
+4 - Em outro terminal execute o client do app
 ```python
 python3 client.py
 ```
